@@ -1,3 +1,5 @@
+import styles from './Clock.module.css'
+
 /**
  * A simple minute and second clock display.
  *
@@ -17,7 +19,7 @@ const Clock = props => {
     seconds
   ]
 
-  return <div>{partials.join('')}</div>
+  return <div className={styles.root}>{partials.join('')}</div>
 }
 
 export default Clock
