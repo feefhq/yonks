@@ -324,6 +324,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/jetbrains-mono@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/jetbrains-mono/-/jetbrains-mono-4.5.10.tgz#c237505aeea535cf6ce1462c4ea39258f0677c2b"
+  integrity sha512-dylbkBmAWL0fkjDpDoDbQCwTQ/W3DzLtVXmwGyAyttfKliPGSP2WpAmmMFYp9NpqFMF7CLprFyzppe8u39Orkw==
+
 "@humanwhocodes/config-array@^0.10.5":
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.10.5.tgz#bb679745224745fff1e9a41961c1d45a49f81c04"

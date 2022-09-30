@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import styles from './Timer.module.css'
 
-const DEFAULT_DURATION = 10 * 1000 * 60
+const DEFAULT_DURATION = 25 * 1000 * 60
 
 /**
  * @param {object} props Component properties
@@ -34,15 +35,12 @@ const Timer = ({ duration = DEFAULT_DURATION }) => {
   }, [elapsed])
 
   return (
-    <>
-      {Math.floor((remaining / 1000 / 60) % 60)
-        .toString()
-        .padStart(2, 0)}
-      :
+    <div className={styles.root}>
+      {Math.floor((remaining / 1000 / 60) % 60).toString()}:
       {Math.ceil((remaining / 1000) % 60)
         .toString()
         .padStart(2, 0)}
-    </>
+    </div>
   )
 }
 

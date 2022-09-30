@@ -1,0 +1,63 @@
+:root {
+  --border-radius: 0.15rem;
+
+  --color-active: rgb(128, 230, 128);
+  --color-inactive: rgb(180, 180, 230);
+  --color-pause: rgb(255, 125, 0);
+  --color-stop: rgb(255, 0, 0);
+
+  --font-stack: "JetBrains Mono", system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  --font-stack-mono: ui-monospace,
+    Menlo,
+    Monaco,
+    'Cascadia Mono',
+    'Segoe UI Mono',
+    'Roboto Mono',
+    'Oxygen Mono',
+    'Ubuntu Monospace',
+    'Source Code Pro',
+    'Fira Mono',
+    'Droid Sans Mono',
+    'Courier New',
+    monospace;
+  ;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(32, 33, 37);
+  color: rgb(189, 198, 207);
+  font-family: var(--font-stack);
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: var(--border-radius);
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 0;
+  padding: 0.25rem 1rem;
+}
+
+h1 {
+  font-weight: 400;
+}

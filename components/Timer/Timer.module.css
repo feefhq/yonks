@@ -1,0 +1,5 @@
+.root {
+  color: var(--color-active);
+  font-size: 6rem;
+  font-weight: 100;
+}
