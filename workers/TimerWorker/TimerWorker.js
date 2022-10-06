@@ -1,5 +1,20 @@
-const startTime = performance.now()
+const { Timer } = require('core/Timer')
 
-/* eslint-disable no-undef */
-setInterval(() => self.postMessage(performance.now() - startTime), 1000)
-/* eslint-enable no-undef */
+const onUpdate = elapsed => {
+  self.postMessage(elapsed)
+}
+
+const timer = new Timer({ onUpdate })
+
+self.onmessage = ({ data }) => {
+  switch (data.action) {
+    case 'start':
+      timer.start()
+      break
+    case 'pause':
+      timer.pause()
+      break
+    default:
+      break
+  }
+}

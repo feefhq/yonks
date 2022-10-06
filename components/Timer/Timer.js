@@ -1,4 +1,6 @@
+import { Button } from 'components/Button'
 import { useEffect, useRef, useState } from 'react'
+
 import styles from './Timer.module.css'
 
 const DEFAULT_DURATION = 25 * 1000 * 60
@@ -7,14 +9,16 @@ const DEFAULT_DURATION = 25 * 1000 * 60
  * @param {object} props Component properties
  * @param {number} props.duration How long the timer will last
  */
-const Timer = ({ duration = DEFAULT_DURATION }) => {
+const Timer = ({ duration = DEFAULT_DURATION, onStart = () => {} }) => {
   /** @type {React.MutableRefObject<Worker>} */
   const workerRef = useRef()
 
   /** @type {[number, function] */
   const [elapsed, setElapsed] = useState(0)
+  const [active, setActive] = useState(false)
 
-  const [remaining, setRemaining] = useState(performance.now() + duration)
+  const [remainderSeconds, setRemainderSeconds] = useState(0)
+  const [remainderMinutes, setRemainderMinutes] = useState(0)
 
   useEffect(() => {
     if (!window.Worker) return
@@ -31,15 +35,29 @@ const Timer = ({ duration = DEFAULT_DURATION }) => {
   }, [workerRef])
 
   useEffect(() => {
-    setRemaining(duration - elapsed)
+    const remainingSeconds = Math.ceil((duration - elapsed) / 1000)
+    setRemainderSeconds(remainingSeconds % 60)
+    setRemainderMinutes(Math.floor(remainingSeconds / 60) % 60)
   }, [elapsed])
 
+  const handleActive = () => {
+    workerRef.current.postMessage({ action: active ? 'pause' : 'start' })
+    setActive(!active)
+  }
+
+  const className = [styles.root, active ? styles.active : styles.pause].join(
+    ' '
+  )
+
   return (
-    <div className={styles.root}>
-      {Math.floor((remaining / 1000 / 60) % 60).toString()}:
-      {Math.ceil((remaining / 1000) % 60)
-        .toString()
-        .padStart(2, 0)}
+    <div className={className}>
+      <time>
+        {remainderMinutes.toString()}:
+        {remainderSeconds.toString().padStart(2, 0)}
+      </time>
+      <Button name='Buttony' onClick={handleActive}>
+        {active ? 'Pause' : 'Start'}
+      </Button>
     </div>
   )
 }

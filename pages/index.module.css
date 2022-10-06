@@ -1,7 +1,11 @@
-.active {
+.root {
+  text-align: center;
+}
+
+.root.active {
   color: var(--color-active);
 }
 
-.inactive {
+.root.inactive {
   color: var(--color-inactive);
 }

@@ -1,5 +1,11 @@
-.root {
-  color: var(--color-active);
-  font-size: 6rem;
+.root time {
+  display: grid;
+  font-size: 5rem;
   font-weight: 100;
+  transition: color 0.25s ease-in-out;
+  margin: 1rem;
+}
+
+.root.active {
+  color: var(--color-active);
 }

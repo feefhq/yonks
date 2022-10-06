@@ -1,3 +1,25 @@
-.h1 {
-  font-weight: 100;
+.root {
+  align-items: center;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  height: 100vh;
+}
+
+.root footer,
+.root header {
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+.root address {
+  font-size: 0.65rem;
+  margin: 0.5rem;
+}
+
+.root h1 {
+  color: var(--color-active);
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin: 0;
 }
