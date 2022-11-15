@@ -1,9 +1,19 @@
-.root time {
+.root {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
   display: grid;
+  grid-template-rows: 1fr min-content;
+  height: 30ch;
+  margin: auto;
+  width: 30ch;
+}
+
+.root time {
+  display: block;
   font-size: 5rem;
   font-weight: 100;
   transition: color 0.25s ease-in-out;
-  margin: 1rem;
 }
 
 .root.active {

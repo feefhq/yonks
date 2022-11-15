@@ -50,14 +50,12 @@ const Timer = ({ duration = DEFAULT_DURATION, onStart = () => {} }) => {
   )
 
   return (
-    <div className={className}>
+    <div className={className} onClick={handleActive}>
       <time>
         {remainderMinutes.toString()}:
         {remainderSeconds.toString().padStart(2, 0)}
       </time>
-      <Button name='Buttony' onClick={handleActive}>
-        {active ? 'Pause' : 'Start'}
-      </Button>
+      <Button name='Buttony'>{active ? 'Pause' : 'Start'}</Button>
     </div>
   )
 }
